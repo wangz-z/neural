@@ -1,0 +1,23 @@
+import math
+
+
+def equa(a: float, b: float, c: float):
+    d = b * b - 4 * a * c
+    if d < 0:
+        return '无实根'
+    elif d == 0:
+        x = -b / (2 * a)
+        return x
+    else:
+        x1 = (-b + math.sqrt(d)) / (2 * a)
+        x2 = (-b - math.sqrt(d)) / (2 * a)
+        return x1, x2
+
+
+a = float(input("请输入a值："))
+while a == 0:
+    print("一元二次方程a值不能为零，请重新输入：")
+    a = float(input("请输入a："))
+b = float(input("请输入b："))
+c = float(input("请输入c："))
+print(equa(a, b, c))
